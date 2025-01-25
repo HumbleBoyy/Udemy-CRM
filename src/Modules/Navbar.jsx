@@ -1,9 +1,10 @@
 import React from 'react'
 import Logo from "../assets/Logos/MainLogo.svg"
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { PATH } from '../hooks/usePath'
 import { navbarList } from '../hooks/useRoute'
 const Navbar = () => {
+  const path = useLocation()
   return (
     <div className='h-[100vh] overflow-y-auto w-[20%] bg-[#152259]'>
        <div className='flex flex-col'>
