@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from './Context/Context'
+import DashboardRoutes from './Pages/Dashboard/index.jsx'
+import RegisterRoutes from './Pages/Registiration/index.jsx'
 
 const App = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  const {token} = useContext(Context)
+  if(token){
+   return <DashboardRoutes/>
+  }else{
+   return  <RegisterRoutes/>
+  }
+
+  
 }
 
 export default App
