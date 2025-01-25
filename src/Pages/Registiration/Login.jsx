@@ -28,10 +28,12 @@ const Login = () => {
           setTimeout(()=> {
              setIsLoading(false)
              setToken(data)
+             e.target.reset()
           },1000)
        }else{
           setTimeout(()=> {
             toast.error("User is not defined")
+            e.target.reset()
             setIsLoading(false)
           }, 1000)
        }
