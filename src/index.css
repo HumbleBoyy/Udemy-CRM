@@ -6,3 +6,11 @@
     background: #008eed;
     border-radius: 10px;
 }
+
+.search {
+    background-image: url("./assets/Images/searche.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30px;
+    background-position-x: 5px;
+}

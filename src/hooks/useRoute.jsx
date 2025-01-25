@@ -7,6 +7,7 @@ import { PiStudentBold } from 'react-icons/pi';
 import { RiBankLine } from 'react-icons/ri';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { ImStatsBars } from 'react-icons/im';
+import { Add, List, Profile } from '../Pages/NestedPages';
 
 
 // Dashboard List Items
@@ -21,7 +22,26 @@ export const dashboardList = [
         id:2,
         path:PATH.teachers,
         element:<Teachers/>,
-        children:[]
+        children:[
+            {
+                id:7,
+                path:PATH.teachersAdd,
+                element:<Add/>,
+                children:[]
+            },
+            {
+                id:8,
+                path:PATH.teachersList,
+                element:<List/>,
+                children:[]
+            },
+            {
+                id:9,
+                path:PATH.teachersProfile,
+                element:<Profile/>,
+                children:[]
+            }
+        ]
     },
     {
         id:3,
