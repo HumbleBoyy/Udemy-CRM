@@ -48,7 +48,7 @@ const AddList = () => {
         <div className='flex justify-between items-center'>
            <h2 className='text-[20px] font-semibold text-[#4F4F4F]'>Add Teacher</h2>
            <div className='flex items-center gap-1'>
-               <Link to={navigate(-1)}><Button type={"button"} extraClass={"!w-[150px] bg-red-600"} text={"Cancel"}/></Link>
+               <Button type={"button"} extraClass={"!w-[150px] bg-red-600"} text={"Cancel"} onClick={()=>navigate(-1)}/>
                <Button isLoading={isLoading} type={"submit"} extraClass={"!w-[150px]"} text={"Save"}/>
            </div>
         </div>
@@ -74,7 +74,7 @@ const AddList = () => {
                </div>
                <div className='flex flex-col gap-1'>
                 <label className='text-[20px] text-[#4F4F4F]'>About</label>
-                  <textarea name="about" className='resize-none border-[2px] border-[#4F4F4F] h-[200px] text-[20px] p-2 rounded-[5px] w-[400px]' placeholder='About'>
+                  <textarea name="about" className='resize-none border-[2px] border-[#4F4F4F] h-[150px] text-[20px] p-2 rounded-[5px] w-[400px]' placeholder='About'>
                   </textarea>
                </div>
            </div>
