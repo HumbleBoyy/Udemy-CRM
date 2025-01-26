@@ -99,7 +99,6 @@ const Lists = () => {
     <>
       <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }}/> 
       <Modal openModal={openModal} extraClass={"flex flex-col items-center !h-[150px] !p-2"} setOpenModal={setOpenModal}>
-          
             <h2 className='p-4 text-[20px] font-semibold'>Choose an action</h2>
             <div className='flex gap-2'>
             <Button extraClass={"!w-[150px] "} text={"More"}/>
