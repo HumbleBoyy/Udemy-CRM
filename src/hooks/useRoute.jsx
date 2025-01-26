@@ -8,6 +8,7 @@ import { RiBankLine } from 'react-icons/ri';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { ImStatsBars } from 'react-icons/im';
 import { Add, List, Profile } from '../Pages/NestedPages';
+import AddList from '../Pages/NestedPages/Add';
 
 
 // Dashboard List Items
@@ -26,7 +27,7 @@ export const dashboardList = [
             {
                 id:7,
                 path:PATH.teachersAdd,
-                element:<Add/>,
+                element:<AddList/>,
                 children:[]
             },
             {
