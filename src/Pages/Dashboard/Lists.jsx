@@ -3,12 +3,19 @@ import { Context } from '../../Context/Context'
 import { Table } from 'antd'
 import { CiCircleMore } from 'react-icons/ci'
 import { useNavigate } from 'react-router-dom'
-import { PATH } from '../../hooks/usePath'
+import Modal from '../../Components/Modal/Modal'
+import Button from '../../Components/Button/Button'
+import toast from 'react-hot-toast'
 
 const Lists = () => {
   const teachersList = JSON.parse(localStorage.getItem("list"))
-  
+  const {list, setList} = useContext(Context)
+  const [openModal, setOpenModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+
+
+// Table Function
   const dataSource = teachersList.map((data, index) => ({
     key: index.toString(),
     name: data.fullName,   
@@ -20,7 +27,6 @@ const Lists = () => {
     gender: data.gender,
     image: data.image
   }));
-
   const columns = [
     {
       title: 'Image',
@@ -65,17 +71,42 @@ const Lists = () => {
       title: 'Action',
       dataIndex: 'action',
       key: 'action',
-      render:() =>(
+      render:(id) =>(
         <>
-          <CiCircleMore  size={"30px"} cursor={"pointer"}/>
+          <CiCircleMore onClick={()=> setOpenModal(true)} size={"30px"} cursor={"pointer"}/>
         </>
       )
     },
   ];
 
+// Handle Delete
+  const handleDelete = (id) => {
+     const findDelete = list.findIndex(item => item.id == id)
+     setIsLoading(true)
+     setTimeout(()=> {
+       toast.success("Item Successfully Deleted!")
+       setIsLoading(false)
+     },500)
+     setTimeout(()=> {
+      list.splice(findDelete, 1)
+      setList([...list])
+      setOpenModal(false)
+     }, 1500)
+  }
+
+
   return (
     <>
       <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }}/> 
+      <Modal openModal={openModal} extraClass={"flex flex-col items-center !h-[150px] !p-2"} setOpenModal={setOpenModal}>
+          
+            <h2 className='p-4 text-[20px] font-semibold'>Choose an action</h2>
+            <div className='flex gap-2'>
+            <Button extraClass={"!w-[150px] "} text={"More"}/>
+            <Button extraClass={"!w-[150px] !bg-green-600"} text={"Edit"}/>
+            <Button isLoading={isLoading} extraClass={"!w-[150px] !bg-red-600"} text={"Delete"} onClick={handleDelete}/>
+          </div>
+      </Modal>
     </>
   )
 }

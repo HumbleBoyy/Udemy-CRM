@@ -8,14 +8,19 @@ import { useState } from 'react'
 import Lists from './Lists'
 import { Add, List } from '../NestedPages'
 import { Context } from '../../Context/Context'
+import { Toaster } from 'react-hot-toast'
 
 const Teachers = () => {
 const path = useLocation()
 const navigate = useNavigate()
-
 const {list} = useContext(Context)
   return (
     <>
+    
+    <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
     <div className='p-6'>
     
       {(path.pathname === PATH.teachersAdd) || (path.pathname === PATH.teachersProfile) ?
