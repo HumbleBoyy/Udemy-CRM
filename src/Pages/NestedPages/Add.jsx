@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import Button from '../../Components/Button/Button'
 import Input from '../../Components/Input/Input'
 import { Context } from '../../Context/Context'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 
 const AddList = () => {
@@ -47,7 +47,10 @@ const AddList = () => {
       <form onSubmit={handleSubmit} className='flex flex-col gap-10'>
         <div className='flex justify-between items-center'>
            <h2 className='text-[20px] font-semibold text-[#4F4F4F]'>Add Teacher</h2>
-           <Button isLoading={isLoading} type={"submit"} extraClass={"!w-[150px]"} text={"Save"}/>
+           <div className='flex items-center gap-1'>
+               <Link to={navigate(-1)}><Button type={"button"} extraClass={"!w-[150px] bg-red-600"} text={"Cancel"}/></Link>
+               <Button isLoading={isLoading} type={"submit"} extraClass={"!w-[150px]"} text={"Save"}/>
+           </div>
         </div>
         <div className='flex justify-evenly gap-5'>
            <div className='flex flex-col gap-5'>

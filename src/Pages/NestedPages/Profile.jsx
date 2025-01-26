@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { Context } from '../../Context/Context'
 
 const Profile = () => {
   const {id} = useParams()
-  const singleStaff = teachersList.find(item => item.id === id)
+  const {list} = useContext(Context)
+  const singleStaff = list.find(item => item.id == id)
+  console.log(singleStaff)
   return (
-    <div>
-      Profile
-    </div>
+    <>
+    Profile
+    </>
   )
 }
 

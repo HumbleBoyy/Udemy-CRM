@@ -6,11 +6,16 @@ import { useNavigate } from 'react-router-dom'
 import Modal from '../../Components/Modal/Modal'
 import Button from '../../Components/Button/Button'
 import toast from 'react-hot-toast'
+import { PATH } from '../../hooks/usePath'
+import { MdDelete } from 'react-icons/md'
+import { FaRegEdit } from 'react-icons/fa'
+import { RiEdit2Fill } from 'react-icons/ri'
 
 const Lists = () => {
   const teachersList = JSON.parse(localStorage.getItem("list"))
   const {list, setList} = useContext(Context)
-  const [openModal, setOpenModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [editModal, setEditModal] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
@@ -72,12 +77,14 @@ const Lists = () => {
       dataIndex: 'action',
       key: 'action',
       render:(id) =>(
-        <>
-          <CiCircleMore onClick={()=> setOpenModal(true)} size={"30px"} cursor={"pointer"}/>
-        </>
+        <div className='flex items-center gap-1'>
+          <RiEdit2Fill onClick={()=> setEditModal(true)} className='text-blue-600 text-[25px] cursor-pointer'/>
+          <CiCircleMore onClick={()=> navigate(PATH.teachersProfile)} className='text-[25px] cursor-pointer' />
+          <MdDelete onClick={()=> setDeleteModal(true)} className='text-red-600 text-[25px] cursor-pointer' />
+        </div>
       )
     },
-  ];
+];
 
 // Handle Delete
   const handleDelete = (id) => {
@@ -94,17 +101,21 @@ const Lists = () => {
      }, 1500)
 }
 
+// Handle More
 
   return (
     <>
       <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }}/> 
-      <Modal openModal={openModal} extraClass={"flex flex-col items-center !h-[150px] !p-2"} setOpenModal={setOpenModal}>
-            <h2 className='p-4 text-[20px] font-semibold'>Choose an action</h2>
+
+      <Modal openModal={deleteModal} extraClass={"flex flex-col items-center !h-[150px]"} setOpenModal={setDeleteModal}>
+            <h2 className='p-4 text-[20px] font-semibold'>Do you want to delete?</h2>
             <div className='flex gap-2'>
-            <Button extraClass={"!w-[150px] "} text={"More"}/>
-            <Button extraClass={"!w-[150px] !bg-green-600"} text={"Edit"}/>
+            <Button extraClass={"!w-[150px]"} onClick={()=>setDeleteModal(false)} text={"Cancel"}/>
             <Button isLoading={isLoading} extraClass={"!w-[150px] !bg-red-600"} text={"Delete"} onClick={handleDelete}/>
           </div>
+      </Modal>
+      <Modal openModal={editModal} extraClass={"flex flex-col items-center !p-2"} setOpenModal={setEditModal}>
+           
       </Modal>
     </>
   )
