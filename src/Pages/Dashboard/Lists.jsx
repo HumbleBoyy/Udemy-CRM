@@ -92,7 +92,7 @@ const Lists = () => {
       setList([...list])
       setOpenModal(false)
      }, 1500)
-  }
+}
 
 
   return (
