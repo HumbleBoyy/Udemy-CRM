@@ -1,9 +1,7 @@
-import List from "../NestedPages/List"
 import Profile from "../NestedPages/Profile"
-import Add from "../NestedPages/Add"
+import AddList from "../NestedPages/Add"
 
 export {
-    List,
     Profile,
-    Add
+    AddList
 }

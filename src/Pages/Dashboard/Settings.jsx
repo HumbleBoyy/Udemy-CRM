@@ -1,9 +1,10 @@
 import React from 'react'
+import Warning from '../../Components/Warning/Warning'
 
 const Settings = () => {
   return (
     <div>
-      Settings
+      <Warning/>
     </div>
   )
 }

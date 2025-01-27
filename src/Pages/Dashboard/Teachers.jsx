@@ -2,11 +2,9 @@ import React, { useContext } from 'react'
 import Empty from '../../Components/Empty/Empty'
 import Button from '../../Components/Button/Button'
 import Input from '../../Components/Input/Input'
-import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { PATH } from '../../hooks/usePath'
-import { useState } from 'react'
 import Lists from './Lists'
-import { Add, List } from '../NestedPages'
 import { Context } from '../../Context/Context'
 import { Toaster } from 'react-hot-toast'
 
@@ -38,7 +36,7 @@ const {list} = useContext(Context)
      {list.length !== null ?
      <Lists/>
        :
-       <Empty/>
+      <Empty/>
      }
     </>
       }  

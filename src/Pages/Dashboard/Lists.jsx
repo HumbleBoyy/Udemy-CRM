@@ -126,7 +126,7 @@ const handleEditSubmit = (e) => {
 
   return (
     <>
-      <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }}/> 
+      <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 4 }}/> 
 
       <Modal openModal={deleteModal} extraClass={"flex flex-col items-center !h-[150px]"} setOpenModal={setDeleteModal}>
             <h2 className='p-4 text-[20px] font-semibold'>Do you want to delete?</h2>
