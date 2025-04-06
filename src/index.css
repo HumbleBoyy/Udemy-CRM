@@ -17,6 +17,22 @@
 .message_wrapper{
     display: none;
 }
+.logo_animated{
+    animation: twitter;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    transition: all 1s;
+}
+
+@keyframes twitter {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
  @media (max-width:1110px){
     .app_wrapper{
         display: none;
