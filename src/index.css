@@ -14,3 +14,8 @@
     background-size: 30px;
     background-position-x: 5px;
 }
+ @media (max-width:1106px){
+    .app_wrapper{
+        display: none;
+    }
+ }

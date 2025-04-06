@@ -8,7 +8,9 @@ import { TokenContext } from './Context/Context.jsx'
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <TokenContext>
-        <App />   
+        <div className='app_wrapper'>
+          <App />   
+        </div>
       </TokenContext>
     </BrowserRouter>
 )
