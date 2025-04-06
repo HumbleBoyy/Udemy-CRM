@@ -14,8 +14,19 @@
     background-size: 30px;
     background-position-x: 5px;
 }
+.message_wrapper{
+    display: none;
+}
  @media (max-width:1106px){
     .app_wrapper{
         display: none;
+    }
+    .message_wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background: #000;
     }
  }
