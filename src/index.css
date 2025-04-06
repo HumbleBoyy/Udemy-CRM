@@ -17,7 +17,7 @@
 .message_wrapper{
     display: none;
 }
- @media (max-width:1106px){
+ @media (max-width:1110px){
     .app_wrapper{
         display: none;
     }

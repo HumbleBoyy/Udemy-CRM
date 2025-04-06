@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
           <App />   
         </div>
         <div className='message_wrapper'>
-           <h1 className='text-[20px] font-bold text-white'><span className='text-red-600'>!</span>Ekran sig'imi 1106px-dan kichik</h1>
+           <h1 className='text-[20px] font-bold text-white'><span className='text-red-600'>!</span>Ekran sig'imi 1110px-dan kichik</h1>
         </div>
       </TokenContext>
     </BrowserRouter>
