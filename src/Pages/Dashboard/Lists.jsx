@@ -103,7 +103,7 @@ const Lists = () => {
 // Edit function
 const [updateValue, setUpdateValue] = useState("")
 const [upDateId, setUpdateId] = useState(null)
- const [updateImageValue, setUpdatedImage] = useState(null)
+const [updateImageValue, setUpdatedImage] = useState(null)
 
 const handleEdit = (id) => {
    setUpdateId(id)
