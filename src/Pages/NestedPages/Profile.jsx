@@ -9,8 +9,10 @@ import Button from '../../Components/Button/Button'
 
 const Profile = () => {
   const {id} = useParams()
-  const navigate = useNavigate()
   const {list} = useContext(Context)
+  const obj = list.find(item => item.id === id)
+  const navigate = useNavigate()
+  console.log(obj)
   return (
     <>
        <div className='flex justify-center px-20 py-15 gap-15 w-full'>

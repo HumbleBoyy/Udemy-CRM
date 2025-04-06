@@ -94,7 +94,7 @@ const Lists = () => {
       render:(id) =>(
         <div className='flex items-center gap-1'>
           <RiEdit2Fill onClick={()=> handleEdit(id)} className='text-blue-600 text-[25px] cursor-pointer'/>
-          <CiCircleMore onClick={()=> navigate(PATH.teachersProfile)} className='text-[25px] cursor-pointer' />
+          <CiCircleMore onClick={()=> navigate(`${id}`)} className='text-[25px] cursor-pointer' />
           <MdDelete onClick={()=> setDeleteModal(true)} className='text-red-600 text-[25px] cursor-pointer' />
         </div>
       )
