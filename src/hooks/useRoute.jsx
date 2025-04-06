@@ -31,7 +31,7 @@ export const dashboardList = [
             },
             {
                 id:8,
-                path:PATH.teachersProfile,
+                path:PATH.teachersMore,
                 element:<Profile/>,
                 children:[]
             }

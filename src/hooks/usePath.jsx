@@ -2,7 +2,7 @@ export const PATH = {
     home:"/",
     teachers:"/teachers",
     teachersAdd:"/teachers/add",
-    teachersProfile:"/teachers/:id",
+    teachersMore:"/teachers/:id",
     
     students:"/students",
     billing:"/billing",
