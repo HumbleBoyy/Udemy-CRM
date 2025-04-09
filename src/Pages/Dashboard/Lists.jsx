@@ -20,7 +20,6 @@ const Lists = () => {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
-  console.log(teachersList)
   // Handle Delete
   const handleDelete = (id) => {
     const findDelete = list.findIndex(item => item.id == id)
