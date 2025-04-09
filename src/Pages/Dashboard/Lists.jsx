@@ -46,7 +46,7 @@ const Lists = () => {
     classs: data.classs,
     email: data.email,
     gender: data.gender,
-    image: data.image !== undefined ? data.image : "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
+    image: data.image
   }));
   const columns = [
     {
@@ -57,6 +57,10 @@ const Lists = () => {
         <img
           src={image}
           alt="Profile"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg";
+          }}
           width={50}
           height={50}
           style={{ borderRadius: '50%' }}
