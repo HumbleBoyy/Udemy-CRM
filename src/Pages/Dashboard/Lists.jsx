@@ -20,6 +20,7 @@ const Lists = () => {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
+  console.log(teachersList)
   // Handle Delete
   const handleDelete = (id) => {
     const findDelete = list.findIndex(item => item.id == id)
@@ -38,14 +39,14 @@ const Lists = () => {
 // Table Function
   const dataSource = teachersList.map((data, index) => ({
     key: index.toString(),
-    name: data.fullName,   
+    name: data.name,   
     age: data.age,         
     address: data.address || 'N/A', 
     subject: data.subject, 
-    class: data.class,
+    classs: data.classs,
     email: data.email,
     gender: data.gender,
-    image: data.image
+    image: data.image !== undefined ? data.image : "https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
   }));
   const columns = [
     {
@@ -74,8 +75,8 @@ const Lists = () => {
     },
     {
       title: 'Class',
-      dataIndex: 'class',
-      key: 'class',
+      dataIndex: 'classs',
+      key: 'classs',
     },
     {
       title: 'Email Address',
